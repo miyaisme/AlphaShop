@@ -20,25 +20,135 @@
       <div class="logo w-100 d-flex align-items-center">
         <img src="/image/Logo@2x.png" alt="#" class="image-logo m-center">
       </div>
-      <ul class="menu-list w-100 d-flex flex-wrap flex-column align-items-center justify-content-center  m-center ">
-        <li class="menu-item my-4">男款</li>
-        <span class="menu-item-border"></span>
-        <li class="menu-item my-4">女款</li>
-        <span class="menu-item-border"></span>
-        <li class="menu-item my-4">最新消息</li>
-        <span class="menu-item-border"></span>
-        <li class="menu-item my-4">聯絡我們</li>
-        <span class="menu-item-border"></span>
-        <li class="menu-item my-4">課製商品</li>
-        <span class="menu-item-border"></span>
-      </ul>
-      <div class="icons w-100 d-flex justify-content-center m-6">
-        <img src="/image/search-icon@2x.png" alt="#" class="icon-item mx-6">
-        <img src="/image/shop-icon@2x.png" alt="#" class="icon-item mx-6">
-        <img src="/image/moon-icon@2x.png" alt="#" class="icon-item mx-6">
+      <div class="list w-100 d-none">
+        <ul class="menu-list w-100 d-flex flex-wrap flex-column align-items-center justify-content-center  m-center ">
+          <li class="menu-item my-4">男款</li>
+          <span class="menu-item-border"></span>
+          <li class="menu-item my-4">女款</li>
+          <span class="menu-item-border"></span>
+          <li class="menu-item my-4">最新消息</li>
+          <span class="menu-item-border"></span>
+          <li class="menu-item my-4">聯絡我們</li>
+          <span class="menu-item-border"></span>
+          <li class="menu-item my-4">課製商品</li>
+          <span class="menu-item-border"></span>
+        </ul>
+        <div class="icons w-100 d-flex justify-content-center my-6">
+          <img src="/image/search-icon@2x.png" alt="#" class="icon-item mx-6">
+          <img src="/image/shop-icon@2x.png" alt="#" class="icon-item mx-6">
+          <img src="/image/moon-icon@2x.png" alt="#" class="icon-item mx-6">
+        </div>
       </div>
     </nav>
-    <main id="main-content"></main>
+    <main id="main-content">
+      <div class="left-content">
+        <h2 class="m-4">結帳</h2>
+        <div class="stepper-panel">
+          <div class="stepper-container d-flex w-100 my-center">
+            <div class="step d-flex justify-content-start checked">
+              <div class="circle m-4 d-flex align-items-center justify-content-center"></div><span class="stepper-line stepper-line-left"></span>
+            </div>
+            
+            <div class="step d-flex justify-content-center active">
+              <div class="circle m-4 d-flex align-items-center justify-content-center"></div>
+            </div>
+            
+            <div class="step d-flex justify-content-end">
+              <div class="circle m-4 d-flex align-items-center justify-content-center"></div><span class="stepper-line stepper-line-right"></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-panel">
+          <div class="form-container">
+            <form id="address-form">
+              <div class="part">
+                <h4>寄送地址</h4>
+                <div class="form-row">
+                  <label for="">稱謂</label>
+                  <select name="gender" id="gender">
+                    <option value="先生">先生</option>
+                    <option value="小姐">小姐</option>
+                    <option value="其他">其他</option>
+                  </select>
+                  <label for="">姓名</label>
+                  <input type="text" value="請輸入姓名">
+                  <label for="">電話</label>
+                  <input type="text" value="請輸入行動電話">
+                  <label for="">Email</label>
+                  <input type="text" value="請輸入電子郵件">
+                  <label for="">縣市</label>
+                  <select name="city" id="city">
+                    <option value="city-select">請選擇縣市</option>
+                    <option value="基隆縣">基隆縣</option>
+                    <option value="基隆市">基隆市</option>
+                    <option value="台北市">台北市</option>
+                    <option value="新北市">新北市</option>
+                  </select>
+                  <label for="">地址</label>
+                  <input type="text" value="請輸入地址">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="right-content">
+        <div class="basket-panel">
+          <div class="product-container">
+            <div class="product-panel">
+              <div class="product-image">
+                <img src="/image/pruduct_image@2x.png" alt="#">
+              </div>
+              <div class="product-content">
+                <div class="product-info">
+                  <div class="product-name">破壞補釘修身牛仔褲</div>
+                </div>
+                <div class="product-amount">
+                  <div class="minus">-</div>
+                  <p class="amount">1</p>
+                  <div class="plus">+</div>
+                </div>
+                <div class="product-price">
+                  <div class="price">$3.999</div>
+                </div>
+              </div>
+            </div>
+            <div class="product-panel">
+              <div class="product-image">
+                <img src="/image/pruduct_image@2x (2).png" alt="#">
+              </div>
+              <div class="product-content">
+                <div class="product-info">
+                  <div class="product-name">刷色直筒牛仔褲</div>
+                </div>
+                <div class="product-amount">
+                  <div class="minus">-</div>
+                  <p class="amount">1</p>
+                  <div class="plus">+</div>
+                </div>
+                <div class="product-price">
+                  <div class="price">$1.299</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="total-container">
+            <div class="fee">
+              <div class="deliver-fee">運費</div>
+              <div class="cost">免費</div>
+            </div>
+            <div class="total">
+              <div class="total-price">小計</div>
+              <div class="price">$5.298</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="control-panel">
+        <button class="back">← 上一步</button>
+        <button class="next">→ 下一步</button>
+      </div>
+    </main>
     <footer id="footer-content"></footer>
   </div>
   <script src="/dist/bundle.js"></script>

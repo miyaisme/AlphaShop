@@ -814,8 +814,70 @@ body {
 }
 
 .menu-item-border {
-  width: 100%;
+  width: 90%;
   border-bottom: solid 1px #2A2A2A;
   opacity: 10%;
+}
+
+.step {
+  text-align: center;
+  width: calc(100%/3);
+  position: relative;
+}
+
+.step:nth-child(1) .circle::after {
+  content: "1";
+}
+
+.step:nth-child(2) .circle::after {
+  content: "2";
+}
+
+.step:nth-child(3) .circle::after {
+  content: "3";
+}
+
+.step.checked .circle, .step.active .circle {
+  background-color: #000000;
+  color: #fff;
+}
+
+.step.checked .stepper-line, .step.active .stepper-line {
+  background-color: #000000;
+}
+
+.step.checked .circle::after {
+  content: "\2714";
+}
+
+.circle {
+  height: 32px;
+  width: 32px;
+  background-color: #fff;
+  border: solid 1px #AFB1BD;
+  border-radius: 50%;
+  color: #AFB1BD;
+}
+
+.stepper-line {
+  width: 60px;
+  height: 1px;
+  background-color: #AFB1BD;
+}
+
+.stepper-line-right {
+  position: absolute;
+  top: 50%;
+  right: calc(0% + 44px);
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+.stepper-line-left {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 44px);
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
 }
 /*# sourceMappingURL=main.css.map */

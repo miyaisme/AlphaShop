@@ -227,6 +227,14 @@ body {
   cursor: pointer;
 }
 
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .circle::after {
+      content: "#{$i}";
+    }
+  }
+}
+
 
 // app手機板寬度
 #app {
@@ -266,7 +274,55 @@ body {
 }
 
 .menu-item-border {
-  width: 100%;
+  width: 90%;
   border-bottom: solid 1px #2A2A2A;
   opacity: 10%;
+}
+
+// stepper
+.step {
+  text-align: center;
+  @include getStepNums(3)
+  width: calc(100%/3);
+  position: relative;
+  &.checked, &.active {
+    .circle {
+      background-color: $black;
+      color: $white;
+    }
+    .stepper-line {
+      background-color: $black;
+    }
+  }
+  &.checked .circle::after {
+    content: "\2714";
+  }
+}
+
+.circle {
+  height: 32px;
+  width: 32px;
+  background-color: $white;
+  border: solid 1px #AFB1BD;
+  border-radius: 50%;
+  color: #AFB1BD;
+}
+
+.stepper-line {
+  width: 60px;
+  height: 1px;
+  background-color: #AFB1BD;
+  // 步驟之間的連結線
+  &-right {
+    position: absolute;
+    top: 50%;
+    right: calc(0% + 44px );
+    transform: translate(-50%, 0%);
+  }
+  &-left {
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 44px );
+    transform: translate(-50%, 50%);
+  }
 }
