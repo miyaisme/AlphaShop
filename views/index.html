@@ -1,0 +1,47 @@
+<!-- ./views/layouts/main.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Alpha Shop</title>
+  <!-- <link rel="stylesheet" href="/dist/main.css"> -->
+  <link rel="stylesheet" href="/src/scss/main.css">
+</head>
+
+<body>
+  <div id="app">
+    <nav id="navbar" class="d-flex flex-wrap justify-content-center">
+      <div class="hamburger m-5">
+        <img src="/image/Vector@2x.png" alt="#" class="image-hamburger">
+      </div>
+      <div class="logo w-100 d-flex align-items-center">
+        <img src="/image/Logo@2x.png" alt="#" class="image-logo m-center">
+      </div>
+      <ul class="menu-list w-100 d-flex flex-wrap flex-column align-items-center justify-content-center  m-center ">
+        <li class="menu-item my-4">男款</li>
+        <span class="menu-item-border"></span>
+        <li class="menu-item my-4">女款</li>
+        <span class="menu-item-border"></span>
+        <li class="menu-item my-4">最新消息</li>
+        <span class="menu-item-border"></span>
+        <li class="menu-item my-4">聯絡我們</li>
+        <span class="menu-item-border"></span>
+        <li class="menu-item my-4">課製商品</li>
+        <span class="menu-item-border"></span>
+      </ul>
+      <div class="icons w-100 d-flex justify-content-center m-6">
+        <img src="/image/search-icon@2x.png" alt="#" class="icon-item mx-6">
+        <img src="/image/shop-icon@2x.png" alt="#" class="icon-item mx-6">
+        <img src="/image/moon-icon@2x.png" alt="#" class="icon-item mx-6">
+      </div>
+    </nav>
+    <main id="main-content"></main>
+    <footer id="footer-content"></footer>
+  </div>
+  <script src="/dist/bundle.js"></script>
+</body>
+
+</html>
