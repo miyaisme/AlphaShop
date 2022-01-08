@@ -820,6 +820,22 @@ body {
   cursor: pointer;
 }
 
+.minus, .plus {
+  width: 26px;
+  height: 26px;
+  background-color: #F0F0F5;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #app {
   width: 375px;
 }
@@ -974,5 +990,98 @@ body {
 
 .form-row {
   font-size: 14px;
+}
+
+.basket-panel {
+  border: solid 1px #F0F0F5;
+  border-radius: 8px;
+}
+
+.product-image {
+  height: 100px;
+  width: 100px;
+}
+
+.product-name {
+  font-size: 1rem;
+}
+
+.product-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.product-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.product-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90px;
+  height: 26px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.minus::after {
+  content: "-";
+  font-weight: 1000;
+}
+
+.plus::after {
+  content: "+";
+  font-weight: 1000;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.bottom-line {
+  display: block;
+  width: 90%;
+  border: solid 1px #F0F0F5;
+  background-color: #F0F0F5;
+}
+
+.total-container {
+  font-size: 1rem;
+}
+
+.cost {
+  font-weight: 700;
+}
+
+.fee, .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=main.css.map */

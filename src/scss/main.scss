@@ -269,6 +269,16 @@ body {
   }
 }
 
+%amount-select {
+    width: 26px;
+    height: 26px;
+    background-color: #F0F0F5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 // app手機板寬度
 #app {
@@ -412,7 +422,80 @@ body {
 }
 
 // shipping-form
-
 .form-row {
   font-size: 14px;
+}
+
+// products information
+.basket-panel {
+  border: solid 1px #F0F0F5;
+  border-radius: 8px;
+}
+
+.product-image {
+  height: 100px;
+  width: 100px;
+}
+
+.product-name {
+  font-size: 1rem;
+}
+
+.product-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-content {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.product-amount {
+  display: flex;
+  width: 90px;
+  height: 26px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.minus, .plus {
+  @extend %amount-select;
+}
+
+.minus::after {
+  content: "-";
+  font-weight: 1000;
+}
+
+.plus::after {
+  content: "+";
+  font-weight: 1000;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.bottom-line {
+  display: block;
+  width: 90%;
+  border: solid 1px #F0F0F5;
+  background-color: #F0F0F5;
+}
+
+.total-container {
+  font-size: 1rem;
+}
+
+.cost {
+  font-weight: 700;
+}
+
+.fee, .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
