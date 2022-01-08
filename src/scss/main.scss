@@ -315,10 +315,12 @@ body {
 
 .navbar {
   position: relative;
-}
-
-.list {
-  position: absolute;
+  .list {
+    position: absolute;
+    background-color: $white;
+    z-index: 99;
+    top: 56px;
+  }
 }
 
 
@@ -375,10 +377,6 @@ body {
   width: 100%;
 }
 
-.row-title {
-  
-}
-
 .row-name {
   font-size: 12px;
   margin: 8px 0;
@@ -417,5 +415,4 @@ body {
 
 .form-row {
   font-size: 14px;
-  .row-normal
 }
