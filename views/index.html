@@ -13,7 +13,7 @@
 
 <body>
   <div id="app">
-    <nav id="navbar" class="d-flex flex-wrap justify-content-center">
+    <nav id="navbar" class="navbar d-flex flex-wrap justify-content-center">
       <div class="hamburger m-5">
         <img src="/image/Vector@2x.png" alt="#" class="image-hamburger">
       </div>
@@ -46,46 +46,122 @@
         <div class="stepper-panel">
           <div class="stepper-container d-flex w-100 my-center">
             <div class="step d-flex justify-content-start checked">
-              <div class="circle m-4 d-flex align-items-center justify-content-center"></div><span class="stepper-line stepper-line-left"></span>
+              <div class="circle m-4 d-flex align-items-center justify-content-center"></div><span
+                class="stepper-line stepper-line-left"></span>
             </div>
-            
+
             <div class="step d-flex justify-content-center active">
               <div class="circle m-4 d-flex align-items-center justify-content-center"></div>
             </div>
-            
+
             <div class="step d-flex justify-content-end">
-              <div class="circle m-4 d-flex align-items-center justify-content-center"></div><span class="stepper-line stepper-line-right"></span>
+              <div class="circle m-4 d-flex align-items-center justify-content-center"></div><span
+                class="stepper-line stepper-line-right"></span>
             </div>
           </div>
         </div>
         <div class="form-panel">
           <div class="form-container">
-            <form id="address-form">
-              <div class="part">
-                <h4>寄送地址</h4>
-                <div class="form-row">
-                  <label for="">稱謂</label>
-                  <select name="gender" id="gender">
-                    <option value="先生">先生</option>
-                    <option value="小姐">小姐</option>
-                    <option value="其他">其他</option>
-                  </select>
-                  <label for="">姓名</label>
-                  <input type="text" value="請輸入姓名">
-                  <label for="">電話</label>
-                  <input type="text" value="請輸入行動電話">
-                  <label for="">Email</label>
-                  <input type="text" value="請輸入電子郵件">
-                  <label for="">縣市</label>
-                  <select name="city" id="city">
-                    <option value="city-select">請選擇縣市</option>
-                    <option value="基隆縣">基隆縣</option>
-                    <option value="基隆市">基隆市</option>
-                    <option value="台北市">台北市</option>
-                    <option value="新北市">新北市</option>
-                  </select>
-                  <label for="">地址</label>
-                  <input type="text" value="請輸入地址">
+            <form id="address-form" class="">
+              <div class="part m-4">
+                <h2>寄送地址</h2>
+                <div class="form-row d-flex flex-wrap">
+                  <div class="gender w-50 d-flex flex-wrap">
+                    <label class="row-name w-100" for="">稱謂</label>
+                    <div class="select-wrapper w-100 mr-8">
+                      <select name="gender" id="gender" class="w-100 mr-8 row-select">
+                        <optgroup>
+                          <option value="先生">先生</option>
+                          <option value="小姐">小姐</option>
+                          <option value="其他">其他</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="name w-50 row-title d-flex flex-wrap">
+                    <label class="w-100 row-name" for="">姓名</label>
+                    <input type="text" value="請輸入姓名" class="w-100 row-input">
+                  </div>
+                  <div class="phone w-100 row-title d-flex flex-wrap">
+                    <label class="w-100 row-name" for="">電話</label>
+                    <input type="text" value="請輸入行動電話" class="w-100 row-input">
+                  </div>
+                  <div class="email w-100 row-title d-flex flex-wrap">
+                    <label class="w-100 row-name" for="">Email</label>
+                    <input type="text" value="請輸入電子郵件" class="w-100 row-input">
+                  </div>
+                  <div class="city w-100 row-title d-flex flex-wrap">
+                    <label class="w-100 row-name" for="">縣市</label>
+                    <div class="select-wrapper w-100">
+                      <select name="city" id="city" class="w-100 row-select">
+                        <optgroup>
+                          <option value="city-select">請選擇縣市</option>
+                          <option value="基隆縣">基隆縣</option>
+                          <option value="基隆市">基隆市</option>
+                          <option value="台北市">台北市</option>
+                          <option value="新北市">新北市</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="adress w-100 row-title d-flex flex-wrap">
+                    <label class="w-100 row-name" for="">地址</label>
+                    <input type="text" value="請輸入地址" class="w-100 row-input">
+                  </div>
+                </div>
+              </div>
+            </form>
+            <form id="shipping-form" class="d-none">
+              <div class="part m-4">
+                <h2>運送方式</h2>
+                <div class="form-row d-flex flex-wrap">
+                  <div class="row-normal d-flex w-100">
+                    <input type="radio" id="normal-deliver" class="circle">
+                    <div class="normal d-flex w-75 justify-content-between align-items-center">
+                      <div class="left-normal-deliver d-flex flex-column"><label for="normal-deliver"
+                          class="deliver">標準運送</label>
+                        <label for="normal-deliver" class="info">約 3~7 個工作天</label>
+                      </div>
+                      <div class="right-normal-deliver">
+                        <label for="normal-deliver" class="shipping-price">免費</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-dhl  d-flex w-100">
+                    <input type="radio" id="dhl-deliver" class="circle">
+                    <div class="dhl d-flex w-75 justify-content-between align-items-center">
+                      <div class="left-dhl-deliver d-flex flex-column"><label for="dhl-deliver" class="deliver">DHL 貨運</label>
+                        <label for="dhl-deliver" class="info">48 小時內送達</label>
+                      </div>
+                      <div class="right-dhl-deliver">
+                        <label for="dhl-deliver" class="shipping-price">$500</label>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </form>
+            <form id="pay-form" class="d-none">
+              <div class="part m-4">
+                <h2>付款資訊</h2>
+                <div class="form-row d-flex flex-wrap">
+                  <div class="owner w-100 row-title d-flex flex-wrap">
+                    <label class="w-100 row-name" for="">持卡人姓名</label>
+                    <input type="text" value="John Doe" class="w-100 row-input">
+                  </div>
+                  <div class="card-number w-100 row-title d-flex flex-wrap">
+                    <label class="w-100 row-name" for="">卡號</label>
+                    <input type="text" value="1111 2222 3333 4444" class="w-100 row-input">
+                  </div>
+                  <div class="limit w-50 row-title d-flex flex-wrap">
+                    <label class="w-100 row-name" for="">有效期限</label>
+                    <input type="text" value="MM/YY" class="w-100 mr-8 row-input">
+                  </div>
+                  <div class="safty-numer w-50 row-title d-flex flex-wrap">
+                    <label class="w-100 row-name" for="">CVC/CCV</label>
+                    <input type="text" value="123" class="w-100 row-input">
+                  </div>
                 </div>
               </div>
             </form>
