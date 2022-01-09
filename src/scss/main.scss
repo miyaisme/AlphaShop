@@ -333,6 +333,15 @@ body {
   }
 }
 
+.hamburger {
+  z-index: 1;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.logo {
+  z-index: 0;
+}
 
 // stepper
 .step {

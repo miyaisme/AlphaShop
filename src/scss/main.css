@@ -886,6 +886,18 @@ body {
   top: 56px;
 }
 
+.hamburger {
+  z-index: 1;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.logo {
+  z-index: 0;
+}
+
 .step {
   text-align: center;
   width: calc(100%/3);
