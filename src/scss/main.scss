@@ -499,3 +499,25 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+// 上一步、下一步按鈕
+.control-panel {
+  position: relative;
+  height: 80px;
+}
+
+.back, .next, .first-next {
+  width: 156px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: $white;
+  &.active {
+    background-color: $pink;
+    color: $white;
+  }
+}
+
+.first-next {
+  position: absolute;
+  width: 100%;
+}

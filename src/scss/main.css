@@ -1084,4 +1084,26 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.control-panel {
+  position: relative;
+  height: 80px;
+}
+
+.back, .next, .first-next {
+  width: 156px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.back.active, .next.active, .first-next.active {
+  background-color: #F67599;
+  color: #fff;
+}
+
+.first-next {
+  position: absolute;
+  width: 100%;
+}
 /*# sourceMappingURL=main.css.map */
