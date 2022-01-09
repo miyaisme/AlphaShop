@@ -1,3 +1,6 @@
+// 想嘗試導入另外分出來的scss但是還沒成功，只好先把code貼回來
+// @import resetCSS
+// @import basicSetting
  /* reset css */
 body {
   margin: 0;
@@ -95,6 +98,7 @@ select {
 select optgroup {
   font-size: 12px;
 }
+
 /* basic setting */
 $body-bg: rgb(255, 255, 255);
 $body-color: #000000;
@@ -267,7 +271,7 @@ body {
 @mixin getStepNums($num) {
   @for $i from 1 through $num {
     &:nth-child(#{$i}) .circle::after {
-      content: "#{$i}";
+      content: "#{$i}"
     }
   }
 }
@@ -366,7 +370,7 @@ body {
 // stepper
 .step {
   text-align: center;
-  @include getStepNums(3)
+  @include getStepNums(3);
   width: calc(100%/3);
   position: relative;
   &.checked, &.active {

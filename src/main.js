@@ -1,4 +1,5 @@
-// import './scss/main.scss'
+import './scss/main.scss'
+
 const hamburger = document.querySelector('.hamburger')
 const navList = document.querySelector('.list')
 const nextBtn = document.querySelector('.next')
