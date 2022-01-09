@@ -116,6 +116,7 @@ select optgroup {
 }
 
 /* basic setting */
+/* rwd size setting */
 /* css size setting */
 .w-25 {
   width: 25%;
@@ -836,8 +837,13 @@ body {
           align-items: center;
 }
 
-#app {
-  width: 375px;
+@media all and (max-width: 375px) {
+  #app {
+    width: 375px;
+  }
+  #footer-content {
+    display: none;
+  }
 }
 
 .image-hamburger {
@@ -1117,5 +1123,86 @@ body {
 .first-next {
   position: absolute;
   width: 100%;
+}
+
+@media all and (min-width: 375px) {
+  #app {
+    width: 1440px;
+  }
+  .hamburger {
+    display: none;
+  }
+  .list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    top: 0px;
+  }
+  .menu-item-border {
+    display: none;
+  }
+  .menu-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .icons {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  #main-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .left-content {
+    width: 45%;
+  }
+  .right-content {
+    width: 45%;
+    margin-top: 64px;
+  }
+  .control-panel {
+    width: 45%;
+  }
+  #footer-content {
+    padding: 2.5rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: #F0F0F5;
+  }
+  #footer-content .footer-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 /*# sourceMappingURL=main.css.map */

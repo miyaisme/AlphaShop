@@ -6,10 +6,72 @@ const firstBtn = document.querySelector('.first-next')
 const backBtn = document.querySelector('.back')
 const steps = document.querySelectorAll('.step')
 const forms = document.querySelectorAll('.form')
+const products = document.querySelector('.product-container')
 const minusBtn = document.querySelector('.minus')
 const plusBtn = document.querySelector('.plus')
+const productAmount = document.querySelector('.amount')
+const price = document.querySelector('.price')
+const totalPrice = document.querySelector('.price')
 let step = 0
 let amount = 1
+
+// 商品資料
+const datas = [
+  {
+    id: "product-1",
+    name: "破壞補釘修身牛仔褲",
+    image: "product_image_1",
+    amount: 1,
+    price: 3999,
+  },
+  {
+    id: "product-2",
+    name: "刷色直筒牛仔褲",
+    image: "product_image_2",
+    amount: 1,
+    price: 1299,
+  },
+]
+
+  // 渲染購物車商品畫面
+  ; (function () {
+    let sum = 0
+    datas.forEach((data) => {
+      products.innerHTML += `
+      <div id="${data.id}" class="product-panel mb-4">
+              <div class="image-container">
+                <img class="product-image" src="/image/${data.image}@2x.png" alt="#">
+              </div>
+              <div class="product-content">
+                <div class="product-info">
+                  <div class="product-name">${data.name}</div>
+                </div>
+                <div class="product-amount">
+                  <div class="minus"></div>
+                  <p class="amount">${data.amount}</p>
+                  <div class="plus"></div>
+                </div>
+                <div class="product-price">
+                  <div class="price">$${data.price}</div>
+                </div>
+              </div>
+            </div>
+    ` 
+    sum += data.price
+  })
+    price.innerText += `
+      $ ${sum}
+      `
+  })()
+
+function sumPrice() {
+  let sum = 0
+  for (let i = 0; i < datas.length; i++) {
+    datas.forEach((data) => {
+      sum += datas.price
+    }) 
+  } 
+}
 
 function hamburgerClicked() {
   if (navList.classList.contains('d-none')) {
@@ -59,6 +121,24 @@ function judgeStep() {
   }
 }
 
+// 商品數量增減
+function adjustAmount(e) {
+  if (e.target.classList.contains('minus')) {
+    amount = amount - 1
+  } else if (e.target.classList.contains('plus')) {
+    amount = amount + 1
+  }
+  if (amount <= 0) {
+    amount = 0
+  }
+  productAmount.innerText = amount
+}
+
+// 複數商品總價
+function adjustPrice(e) {
+  // price.innerText = finalPrice
+}
+
 // nav漢堡排點擊
 hamburger.addEventListener('click', hamburgerClicked)
 
@@ -66,6 +146,8 @@ hamburger.addEventListener('click', hamburgerClicked)
 firstBtn.addEventListener('click', BtnClicked)
 nextBtn.addEventListener('click', BtnClicked)
 backBtn.addEventListener('click', BtnClicked)
+// 商品數量增減
+products.addEventListener('click', adjustAmount, adjustPrice)
 
 // step 1 的初始狀態
 if (step === 0) {

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "css-loader": "^6.5.1",
     "mini-css-extract-plugin": "^2.4.5",
     "node-sass": "^7.0.1",

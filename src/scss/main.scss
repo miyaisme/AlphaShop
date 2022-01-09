@@ -103,6 +103,9 @@ $black: #000000;
 $pink: #F67599;
 $gray: #F0F0F5;
 
+/* rwd size setting */
+$phone-media: 375px;
+$pc-media: 1440px;
 
 /* css size setting */
 $sizes: (
@@ -269,6 +272,18 @@ body {
   }
 }
 
+@mixin phone-width {
+  @media all and (max-width: $phone-media) {
+    @content
+  }
+}
+
+@mixin pc-width {
+  @media all and (min-width: $phone-media) {
+    @content
+  }
+}
+
 %amount-select {
     width: 26px;
     height: 26px;
@@ -281,8 +296,13 @@ body {
 
 
 // app手機板寬度
-#app {
-  width: 375px;
+@include phone-width{
+  #app {
+    width: $phone-media;
+  }
+  #footer-content {
+    display: none;
+  }
 }
 
 // 設定漢堡、logo尺寸
@@ -529,4 +549,59 @@ body {
 .first-next {
   position: absolute;
   width: 100%;
+}
+
+// pc板寬度
+@include pc-width{
+  #app {
+    width: $pc-media;
+  }
+  .hamburger {
+    display: none;
+  }
+  .list {
+    display: flex;
+    position: fixed;
+    top: 0px;
+  }
+  .menu-item-border {
+    display: none;
+  }
+  .menu-list {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .icons {
+    justify-content: flex-end;
+  }
+  #main-content {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .left-content {
+    width: 45%;
+  }
+  .right-content {
+    width: 45%;
+    margin-top: 64px;
+  }
+  .control-panel {
+    width: 45%;
+  }
+  #footer-content {
+    padding: 2.5rem 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #F0F0F5;
+    .footer-logo {
+      display: flex;
+      align-items: center;
+    }
+  }
 }

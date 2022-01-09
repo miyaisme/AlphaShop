@@ -9,6 +9,9 @@
   <title>Alpha Shop</title>
   <!-- <link rel="stylesheet" href="/dist/main.css"> -->
   <link rel="stylesheet" href="/src/scss/main.css">
+  <script defer src="/src/brands.js"></script>
+  <script defer src="/src/solid.js"></script>
+  <script defer src="/src/fontawesome.js"></script>
 </head>
 
 <body>
@@ -172,42 +175,7 @@
       <div class="right-content">
         <div class="basket-panel m-4">
           <div class="product-container m-4">
-            <div class="product-panel mb-4">
-              <div class="image-container">
-                <img class="product-image" src="/image/pruduct_image@2x.png" alt="#">
-              </div>
-              <div class="product-content">
-                <div class="product-info">
-                  <div class="product-name">破壞補釘修身牛仔褲</div>
-                </div>
-                <div class="product-amount">
-                  <div class="minus"></div>
-                  <p class="amount">1</p>
-                  <div class="plus"></div>
-                </div>
-                <div class="product-price">
-                  <div class="price">$3.999</div>
-                </div>
-              </div>
-            </div>
-            <div class="product-panel">
-              <div class="image-container">
-                <img class="product-image" src="/image/pruduct_image@2x (2).png" alt="#">
-              </div>
-              <div class="product-content">
-                <div class="product-info">
-                  <div class="product-name">刷色直筒牛仔褲</div>
-                </div>
-                <div class="product-amount">
-                  <div class="minus"></div>
-                  <p class="amount">1</p>
-                  <div class="plus"></div>
-                </div>
-                <div class="product-price">
-                  <div class="price">$1.299</div>
-                </div>
-              </div>
-            </div>
+            <!-- js 動態渲染商品 -->
           </div>
           <span class="bottom-line my-center"></span>
           <div class="total-container">
@@ -218,7 +186,7 @@
             <span class="bottom-line my-center"></span>
             <div class="total m-4">
               <div class="total-price">小計</div>
-              <div class="price">$5.298</div>
+              <div class="price"></div>
             </div>
           </div>
         </div>
@@ -230,7 +198,39 @@
         <button class="first-next next">→ 下一步</button>
       </div>
     </main>
-    <footer id="footer-content"></footer>
+    <footer id="footer-content">
+      <div class="footer-logo">
+        <img src="/image/Logo@2x.png" alt="#" class="image-logo m-center">
+      </div>
+      <div class="footer-item">
+        <h2 class="client-servise my-6">客戶服務</h2> 
+        <div class="servise">運送說明</div>
+        <div class="servise">退換貨相關</div>
+        <div class="servise">付款資訊</div>
+        <div class="servise">FAQ</div>
+      </div>
+      <div class="footer-item">
+        <h2 class="abouts my-6">關於我們</h2>
+        <div class="about">品牌故事</div>
+        <div class="about">媒體連繫</div>
+        <div class="about">Press kit</div>
+      </div>
+      <div class="footer-item">
+        <h2 class="information my-6">資訊</h2>
+        <div class="footer-info">隱私權政策</div>
+        <div class="footer-info">Cookie</div>
+        <div class="footer-info">GDPR</div>
+      </div>
+      <div class="footer-item">
+        <h2 class="contacts my-6">追蹤 ALPHA Shop</h2>
+        <div class="contact">+886 02123-45678</div>
+        <div class="footer-icons m-2">
+          <div class="footer-icon fb fab fa-facebook-f mr-4"></div>
+          <div class="footer-icon fab fa-instagram mr-4"></div>
+          <div class="footer-icon fas fa-phone"></div>
+        </div>
+      </div>
+    </footer>
   </div>
   <script src="/src/main.js"></script>
 </body>
