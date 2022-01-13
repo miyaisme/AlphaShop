@@ -559,14 +559,19 @@ body {
 @include pc-width{
   #app {
     width: $pc-media;
+    margin: 0 auto;
+  }
+  #navbar, #main-content, .footer-wrapper {
+    margin: 0 165px;
   }
   .hamburger {
     display: none;
   }
-  .list {
+  #navbar-list {
     display: flex;
-    position: fixed;
     top: 0px;
+    background-color: transparent;
+    height: 56px;
   }
   .menu-item-border {
     display: none;
@@ -582,7 +587,6 @@ body {
   }
   #main-content {
     display: flex;
-    width: 100%;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
@@ -594,15 +598,13 @@ body {
     width: 45%;
     margin-top: 64px;
   }
-  .control-panel {
-    width: 45%;
-  }
   #footer-content {
+    background-color: #F0F0F5;
+  }
+  .footer-wrapper {
     padding: 2.5rem 0;
     display: flex;
-    width: 100%;
     justify-content: space-between;
-    background-color: #F0F0F5;
     .footer-logo {
       display: flex;
       align-items: center;

@@ -1128,16 +1128,21 @@ body {
 @media all and (min-width: 375px) {
   #app {
     width: 1440px;
+    margin: 0 auto;
+  }
+  #navbar, #main-content, .footer-wrapper {
+    margin: 0 165px;
   }
   .hamburger {
     display: none;
   }
-  .list {
+  #navbar-list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: fixed;
     top: 0px;
+    background-color: transparent;
+    height: 56px;
   }
   .menu-item-border {
     display: none;
@@ -1164,7 +1169,6 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-orient: horizontal;
@@ -1182,21 +1186,19 @@ body {
     width: 45%;
     margin-top: 64px;
   }
-  .control-panel {
-    width: 45%;
-  }
   #footer-content {
+    background-color: #F0F0F5;
+  }
+  .footer-wrapper {
     padding: 2.5rem 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    background-color: #F0F0F5;
   }
-  #footer-content .footer-logo {
+  .footer-wrapper .footer-logo {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

@@ -1,4 +1,4 @@
-import './scss/main.scss'
+// import './scss/main.scss'
 
 const hamburger = document.querySelector('.hamburger')
 const navList = document.querySelector('.list')
@@ -123,6 +123,7 @@ function judgeStep() {
 }
 
 // 商品數量增減
+// 還沒有成功判斷是哪個商品
 function adjustAmount(e) {
   if (e.target.classList.contains('minus')) {
     amount = amount - 1
@@ -135,9 +136,9 @@ function adjustAmount(e) {
   productAmount.innerText = amount
 }
 
-// 複數商品總價
+//複數商品總價
 function adjustPrice(e) {
-  // price.innerText = finalPrice
+  price.innerText = finalPrice
 }
 
 // nav漢堡排點擊
