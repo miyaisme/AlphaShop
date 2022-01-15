@@ -8,25 +8,21 @@ const backBtn = document.querySelector('.back')
 const steps = document.querySelectorAll('.step')
 const forms = document.querySelectorAll('.form')
 const products = document.querySelector('.product-container')
-const minusBtn = document.querySelector('.minus')
-const plusBtn = document.querySelector('.plus')
-const productAmount = document.querySelector('.amount')
 const price = document.querySelector('.price')
 const totalPrice = document.querySelector('.price')
 let step = 0
-let amount = 1
 
 // 商品資料
 const datas = [
   {
-    id: "product-1",
+    id: "1",
     name: "破壞補釘修身牛仔褲",
     image: "product_image_1",
     amount: 1,
     price: 3999,
   },
   {
-    id: "product-2",
+    id: "2",
     name: "刷色直筒牛仔褲",
     image: "product_image_2",
     amount: 1,
@@ -35,11 +31,11 @@ const datas = [
 ]
 
   // 渲染購物車商品畫面
-  ; (function () {
+  ; (function() {
     let sum = 0
     datas.forEach((data) => {
       products.innerHTML += `
-      <div id="${data.id}" class="product-panel mb-4">
+      <div class="product-panel mb-4">
               <div class="image-container">
                 <img class="product-image" src="/image/${data.image}@2x.png" alt="#">
               </div>
@@ -48,9 +44,9 @@ const datas = [
                   <div class="product-name">${data.name}</div>
                 </div>
                 <div class="product-amount">
-                  <div class="minus"></div>
-                  <p class="amount">${data.amount}</p>
-                  <div class="plus"></div>
+                  <div data-id="${data.id}" class="minus"></div>
+                  <p data-id="${data.id}" class="amount">${data.amount}</p>
+                  <div data-id="${data.id}" class="plus"></div>
                 </div>
                 <div class="product-price">
                   <div class="price">$${data.price}</div>
@@ -123,17 +119,20 @@ function judgeStep() {
 }
 
 // 商品數量增減
-// 還沒有成功判斷是哪個商品
 function adjustAmount(e) {
-  if (e.target.classList.contains('minus')) {
-    amount = amount - 1
-  } else if (e.target.classList.contains('plus')) {
-    amount = amount + 1
+  const minusBtns = document.querySelectorAll('.minus')
+  const plusBtns = document.querySelectorAll('.plus')
+  const productAmounts = document.querySelectorAll('.amount')
+  const i = e.target.dataset.id - 1
+  let amount = productAmounts[i].innerText
+  if (e.target.dataset.id === minusBtns[i].dataset.id && e.target.classList.contains('minus')) {
+    productAmounts[i].innerText = Number(amount) - 1
+    if (amount <= 0) {
+      productAmounts[i].innerText = 0
+    }
+  } else if (e.target.dataset.id === minusBtns[i].dataset.id && e.target.classList.contains('plus')) {
+    productAmounts[i].innerText = Number(amount) + 1
   }
-  if (amount <= 0) {
-    amount = 0
-  }
-  productAmount.innerText = amount
 }
 
 //複數商品總價
