@@ -8,8 +8,7 @@ const backBtn = document.querySelector('.back')
 const steps = document.querySelectorAll('.step')
 const forms = document.querySelectorAll('.form')
 const products = document.querySelector('.product-container')
-const price = document.querySelector('.price')
-const totalPrice = document.querySelector('.price')
+const totalPrice = document.querySelector('.final-price')
 let step = 0
 
 // 商品資料
@@ -20,6 +19,7 @@ const datas = [
     image: "product_image_1",
     amount: 1,
     price: 3999,
+    prices: 3999,
   },
   {
     id: "2",
@@ -27,6 +27,7 @@ const datas = [
     image: "product_image_2",
     amount: 1,
     price: 1299,
+    prices: 1299,
   },
 ]
 
@@ -49,26 +50,17 @@ const datas = [
                   <div data-id="${data.id}" class="plus"></div>
                 </div>
                 <div class="product-price">
-                  <div class="price">$${data.price}</div>
+                  <div data-id="${data.id}" class="price">$${data.prices}</div>
                 </div>
               </div>
             </div>
     ` 
-    sum += data.price
+    sum += data.prices
   })
-    price.innerText += `
+    totalPrice.innerText += `
       $ ${sum}
       `
   })()
-
-function sumPrice() {
-  let sum = 0
-  for (let i = 0; i < datas.length; i++) {
-    datas.forEach((data) => {
-      sum += datas.price
-    }) 
-  } 
-}
 
 function hamburgerClicked() {
   if (navList.classList.contains('d-none')) {
@@ -78,6 +70,7 @@ function hamburgerClicked() {
   }
 }
 
+//上一步&下一步
 function BtnClicked(e) {
   const nowStep = steps[step]
   e.preventDefault()
@@ -123,21 +116,31 @@ function adjustAmount(e) {
   const minusBtns = document.querySelectorAll('.minus')
   const plusBtns = document.querySelectorAll('.plus')
   const productAmounts = document.querySelectorAll('.amount')
+  const prices = document.querySelectorAll('.price')
   const i = e.target.dataset.id - 1
   let amount = productAmounts[i].innerText
   if (e.target.dataset.id === minusBtns[i].dataset.id && e.target.classList.contains('minus')) {
+    //調整商品數量
     productAmounts[i].innerText = Number(amount) - 1
-    if (amount <= 0) {
-      productAmounts[i].innerText = 0
+    //調整商品總價
+    datas[i].prices = (Number(amount) - 1) * Number(datas[i].price)
+    prices[i].innerText = "$" + datas[i].prices
+    if (amount <= 1) {
+      productAmounts[i].innerText = 1
+      prices[i].innerText = "$" + datas[i].price
+      datas[i].prices = datas[i].price
     }
-  } else if (e.target.dataset.id === minusBtns[i].dataset.id && e.target.classList.contains('plus')) {
+  } else if (e.target.dataset.id === plusBtns[i].dataset.id && e.target.classList.contains('plus')) {
     productAmounts[i].innerText = Number(amount) + 1
+    datas[i].prices = (Number(amount) + 1) * Number(datas[i].price)
+    prices[i].innerText = "$" + datas[i].prices
   }
-}
-
-//複數商品總價
-function adjustPrice(e) {
-  price.innerText = finalPrice
+  let finalPrice = 0
+  for (let i = 0; i < datas.length; i++) {
+    finalPrice += datas[i].prices
+  }
+  //調整所有商品的小計價格
+  totalPrice.innerText = "$" + finalPrice
 }
 
 // nav漢堡排點擊
@@ -148,7 +151,7 @@ firstBtn.addEventListener('click', BtnClicked)
 nextBtn.addEventListener('click', BtnClicked)
 backBtn.addEventListener('click', BtnClicked)
 // 商品數量增減
-products.addEventListener('click', adjustAmount, adjustPrice)
+products.addEventListener('click', adjustAmount)
 
 // step 1 的初始狀態
 if (step === 0) {
